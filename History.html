@@ -4,15 +4,253 @@
 		<style>
 			body {	background-color:#133BD9;
 				margin:0px;
-				padding:0px;	}
+				padding:0px; font-family: Helvetica, sans-serif;	}
+			img {	border-radius:15px;	}
+			* {
+  box-sizing: border-box;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+/* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
+
+/* Full-width containers */
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+/* Make sure that all arrows are pointing leftwards */
+  .container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+/* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+    left: 15px;
+  }
+
+/* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+}
 		</style>
 	</head>
 	<body>
 		<div>
 			<center>
-				<a href="Landing_Page.html"><img src="C:\Users\Callu\Documents\GitHub\RoyalBelgianFAWebsite\Euros_Website_Images\Home_Icon.png" style="padding: 10px; height: 50px; width: 60px;" title="Return to Landing Page"></a>
+				<a href="Landing_Page.html"><img src="C:\Users\Callu\Documents\GitHub\RoyalBelgianFAWebsite\Euros_Website_Images\Home_Icon.png" style="padding: 10px; height: 70px; width: 80px;" title="Return to Landing Page"></a>
 			</center>
-			<h1>History</h1>
+		</div>
+		<div class="timeline">
+  			<div class="container left">
+    				<div class="content">
+					<center>
+      						<h2>1904</h2>
+      						<p>The Belgium national football team has officially represented Belgium in men's international football since their maiden match in 1904.</p>
+						<img src="C:\Users\Callu\Documents\GitHub\RoyalBelgianFAWebsite\Euros_Website_Images\Belgium_1904.jpg" style="height:135px; width:300px;">
+					</center>
+    				</div>
+ 			 </div>
+  			<div class="container right">
+    				<div class="content">
+					<center>
+      						<h2>1906</h2>
+      						<p>In 1906, the national team players received the nickname Red Devils because of their red jerseys. </p>
+						<img src="C:\Users\Callu\Documents\GitHub\RoyalBelgianFAWebsite\Euros_Website_Images\Belgium_1906.jpg" style="height:135px; width:300px;">
+					</center>
+    				</div>
+  			</div>
+  			<div class="container left">
+    				<div class="content">
+					<center>
+      						<h2>1920</h2>
+      						<p>At the 1920 Summer Olympic, in their first official Olympics appearance, the Red Devils won the gold medal on home soil after a controversial final in which their Czechoslovak opponents left the pitch. </p>
+						<img src="C:\Users\Callu\Documents\GitHub\RoyalBelgianFAWebsite\Euros_Website_Images\Belgium 1920.jpg" style="height:135px; width:300px;">
+					</center>
+    				</div>
+ 			 </div>
+  			<div class="container right">
+    				<div class="content">
+					<center>
+      						<h2>1950-1968</h2>
+      						<p>Belgium qualified for only one of eight major tournament during the 1950s and the 1960s: the 1954 World Cup. However, Belgium were eliminated after a loss to Italy in the second (and last) group match. </p>
+						<img src="C:\Users\Callu\Documents\GitHub\RoyalBelgianFAWebsite\Euros_Website_Images\Belgium_1960s.jpg" style="height:254px; width:160px;">
+					</center>
+    				</div>
+  			</div>
+  			<div class="container left">
+    				<div class="content">
+					<center>
+      						<h2>1970-1978</h2>
+      						<p>The team's performance improved during the early 1970s, under manager Raymond Goethals. Belgium had their first victories at World and European Championship at the 1970 World Cup and Euro 1972. En route to that Euro appearance, their first, they eliminated reigning European champions Italy by winning the two-legged quarter-final on aggregate. At the end stage, they finished third by winning the consolation match against Hungary. In 1973, the denial of a match-winning goal in their last 1974 FIFA World Cup qualification match for UEFA Group 3 cost Belgium their appearance at the final, causing Belgium to become the only nation ever to miss a World Cup final round despite not allowing a goal during the qualifiers. The next two attempts to reach a major final (Euro 1976 and the 1978 FIFA World Cup) were also fruitless. </p>
+						<img src="C:\Users\Callu\Documents\GitHub\RoyalBelgianFAWebsite\Euros_Website_Images\Belgium_1970.webp" style="height:300px; width:300px;">
+					</center>
+    				</div>
+ 			 </div>
+  			<div class="container right">
+    				<div class="content">
+					<center>
+      						<h2>1980-2002</h2>
+      						<p>Beginning with a second-place finish at Euro 1980, the 1980s and the early 1990s are generally considered as Belgium's first golden age. Coached by Guy Thys, they achieved their spot in the 1980 final with an unbeaten record in the group phase; in the final, they narrowly lost the title to West Germany with the score 1–2.  Starting with the 1982 World Cup, and ending with the 2002 World Cup, the national team qualified for six consecutive World Cup end stages and mostly progressed to the second round. During this period, managers Guy Thys, Paul Van Himst and Robert Waseige each guided a Belgian selection past the first round. In addition to receiving individual FIFA recognitions, the team reached the semi-finals of the 1986 World Cup. After reaching the Euro 1980 final, they were unsuccessful at subsequent European Championship, with early exits from their appearances in 1984 and in 2000. During the late 1990s, they played three friendly tournament in Morocco, Cyprus and Japan, sharing the 1999 Kirin Cup with Peru in the latter. At the eve of the World Cup in 2002, Belgium defeated reigning world and European champions France. During that World Cup, Belgium defeated Russia and tied with co-host Japan and Tunisia to reach the round of 16. </p>
+						<img src="C:\Users\Callu\Documents\GitHub\RoyalBelgianFAWebsite\Euros_Website_Images\Belgium_2002.jpeg" style="height:250px; width:200px;">
+					</center>
+    				</div>
+  			</div>
+  			<div class="container left">
+    				<div class="content">
+					<center>
+      						<h2>2004-2009</h2>
+      						<p>After the 2002 World Cup, the team weakened with the loss of more veterans and coach Waseige. They missed out five successive major finals from UEFA Euro 2004 until UEFA Euro 2012, and went through an equal number of head coaches. In between, a promising new generation was maturing at the 2007 European U-21 Championship; Belgium's squad qualified for the following year's Summer Olympic in Beijing, where the Young Red Devils squad finished fourth. Seventeen of them appeared in the senior national team, albeit without making an immediate impact. Belgium finished in second (and last) place at the Kirin Cup in May 2009. </p>
+						<img src="C:\Users\Callu\Documents\GitHub\RoyalBelgianFAWebsite\Euros_Website_Images\Belgium_2009.avif" style="height:138px; width:230px;">
+					</center>
+    				</div>
+ 			 </div>
+  			<div class="container right">
+    				<div class="content">
+					<center>
+      						<h2>2014</h2>
+      						<p>After two matches as interim coach, Wilmots agreed to replace Leekens as manager. Following his appointment, the team's results improved, such that some foreign media regarded it as another Belgian golden generation. The young Belgian squad qualified as unbeaten group winners for the 2014 World Cup final, and earned Belgium's second-ever place in a World Cup quarter-finals with a four-match winning streak. </p>
+						<img src="C:\Users\Callu\Documents\GitHub\RoyalBelgianFAWebsite\Euros_Website_Images\Belgium_2014.avif" style="height:213px; width:341px;">
+					</center>
+    				</div>
+  			</div>
+  			<div class="container left">
+    				<div class="content">
+					<center>
+      						<h2>2015-2016</h2>
+      						<p>Belgium qualified for UEFA Euro 2016 with a match to spare in October 2015, and took the top spot in the FIFA World Ranking for the first time in November 2015,  to stay first for five mont In the following year, Belgium could not confirm their role as outsider at the European Championship with a quarter-finals elimination by the 26th FIFA-ranked Welsh team This prompted the RBFA to dismiss Wilmots. In the 2018 World Cup qualifying allocation, they were seeded first in their group, and made the final tournament under Spanish manager Roberto Martínez, becoming the first European team besides hosts Russia to do so. Belgium was eliminated in the semi-finals by eventual champions France, but won the third place play-off against England. </p>
+						<img src="C:\Users\Callu\Documents\GitHub\RoyalBelgianFAWebsite\Euros_Website_Images\Belgium_2016.jpg" style="height:250px; width:250px;">
+					</center>
+    				</div>
+ 			 </div>
+  			<div class="container right">
+    				<div class="content">
+					<center>
+      						<h2>2020</h2>
+      						<p>Despite the impressive form in the UEFA Euro 2020 qualifiers as well as being regarded as the biggest contender for the European trophy, the tournament became a complete disappointment for Belgium. Being drawn in Group B alongside Russia, Denmark and Finland, Belgium easily conquered the group with three wins. In the knockout phase, Belgium first faced reigning champions Portugal in the last sixteen and survived the scare with a thunder strike from Thorgan Hazard to give Belgium a 1–0 win. In the quarter-finals, Belgium once again faced old foe Italy, but Belgium failed to take revenge for their 2016 loss, once again suffering a 1–2 defeat, with the goal being scored by Romelu Lukaku, ending Belgium's campaign on a sad note. </p>
+						<img src="C:\Users\Callu\Documents\GitHub\RoyalBelgianFAWebsite\Euros_Website_Images\Belgium_2020.jpg" style="height:167px; width:256px;">
+					</center>
+    				</div>
+  			</div>
+  			<div class="container left">
+    				<div class="content">
+					<center>
+      						<h2>2022</h2>
+      						<p>At the 2022 World Cup in Qatar, Belgium were drawn into Group F alongside Croatia, Morocco and Canada. Despite starting their campaign well with a 1–0 victory over Canada, they then suffered a shock 2–0 defeat to Morocco, and following a 0–0 draw with Croatia in their final group game, Belgium were knocked out of the tournament at the group stages for the first time since 1998.</p>
+						<img src="C:\Users\Callu\Documents\GitHub\RoyalBelgianFAWebsite\Euros_Website_Images\Belgium_2022.webp" style="height:157px; width:250px;">
+					</center>
+    				</div>
+ 			 </div>
+  			<div class="container right">
+    				<div class="content">
+					<center>
+      						<h2>2023-2024</h2>
+      						<p>In February 2023, it was announced that Domenico Tedesco has been appointed as the new head coach of the Belgian national team, replacing Roberto Martinez on a contract lasting until the end of Euro 2024. At the finals, Belgium were eliminated in the round of 16, losing 1–0 to France. </p>
+						<img src="C:\Users\Callu\Documents\GitHub\RoyalBelgianFAWebsite\Euros_Website_Images\Belgium_2024.jpg"style="height:169px; width:300px;">
+					</center>
+    				</div>
+  			</div>
 		</div>
 		<footer>
 			<img src="C:\Users\Callu\Documents\GitHub\RoyalBelgianFAWebsite\Euros_Website_Images\Footer_Design.png" style="height:139px; width:100%; margin:0px; padding:0px; border-radius:0px;">
